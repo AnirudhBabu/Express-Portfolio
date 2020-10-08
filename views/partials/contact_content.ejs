@@ -1,0 +1,54 @@
+<main id="contactMain">        
+      <div class="container">
+          <h1 class="display-4">Contact Us</h1>
+          <hr>
+          <!--Span used to float the form beside contact info-->
+          <span class="besideInfo">
+          <!--Form for user input-->
+          <form action="/" id="contactForm">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstName" placeholder="Enter your First name" required="" autofocus="">
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastName" placeholder="Enter your Last name" required="">
+            </div>
+
+            <div class="form-group">
+              <label for="contactNumber">Contact Number</label>
+              <input type="tel" class="form-control" id="contactNumber" name="contactNumber" aria-describedby="contactNumber" placeholder="Enter your Contact Number" required="">
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddress">Email address</label>
+              <input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailAddress" placeholder="Enter your email address" required="">
+            </div>
+
+            <div class="form-group">
+              <label for="shortMessage">Your Message</label>
+              <textarea class="form-control" id="shortMessage" name="shortMessage" rows="3" aria-describedby="shortMessage" placeholder="Type in anything you would like to let me know..."></textarea>
+            </div>
+
+            <button id="submitButton" type="submit" class="btn btn-lg btn-dark"><i class="fas fa-envelope-square"></i> Send</button>
+            <button id="resetButton" type="reset" class="btn btn-warning btn-lg"><i class="fas fa-comment-slash"></i> Reset</button>
+            <br><br>
+          </form>
+          </span>
+          
+          <!--Contact info card (floated right of preceding span)-->
+          <span class="card">
+            <div class="card-header">
+              <strong>My Contact Information</strong>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><strong>Email address:</strong> anirudhbabu2001@gmail.com</h5>
+              <h5 class="card-title"><strong>Phone number:</strong> 647-999-9999</h5>
+              <h5 class="card-title"><strong>Address:</strong> 999 Mall Avenue, ST 091 234, Canada</h5>
+            </div>
+          </span>  
+
+      </div>
+  
+    </main>

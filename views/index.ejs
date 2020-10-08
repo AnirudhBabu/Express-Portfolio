@@ -1,0 +1,77 @@
+<%- include partials/header.ejs %>
+
+  <%- include partials/main_nav.ejs %>
+
+  <!--Main Content-->
+  <% if(title == "About Me") {%>
+        <main id="AboutMe">
+  <%} else {%>
+  <main>
+  <% } %>      
+        <div class="row w-100 mx-0">
+                <!--First welcoming block of content-->
+                <div class="col-12 px-0" id="unit1">
+                        <div class="container">              
+                                <% if(title == "Home" || title == "Services") {%>
+                                <span class="odd"><h1 class="display-3">Welcome to the <%= title %> page</h1></span>
+                                <% } else if(title == "About Me") {%>
+                                        <%- include partials/about_intro.ejs %>
+                                <% } else if(title == "Projects"){%>
+                                        <span class="odd" id="projectTitle"><h1 class="display-3"><%= title %></h1></span>
+                                <% } %>
+                        </div> 
+                </div>       
+                <!--Second block of content-->
+                <!--<div class="row" id="unit2">-->
+
+                <div class="col-12 px-0 w-100"></div>
+
+                <div class="col-12 px-0" id="unit2">
+                        <div class="container">
+                                <% if(title == "Home"){%>
+                                <%- include partials/home_content.ejs %>
+                                <%} else if(title == "About Me") { %>
+                                        <%- include partials/about_lists.ejs %>
+                                <%} else if(title == "Services") { %>
+                                        <%- include partials/services_content.ejs %>
+                                <%} else if(title == "Projects") { %>
+                                        <%- include partials/projects_1.ejs %>
+                                <% } %>
+                        </div>
+                </div>
+                <!--</div>-->
+                <!--Third block (Not for Home and services)-->
+                <% if(title != "Home" && title != "Services") {%>
+                <div class="col-12 px-0 w-100"></div>
+
+                <div class="col-12 px-0" id="unit3">
+                        <div class="container">
+                                <% if(title == "About Me") {%>
+                                <%- include partials/about_resume.ejs %>
+                                <% } else if(title == "Projects") {%>
+                                <%- include partials/projects_2.ejs %>
+                                <% } %>
+                        </div>
+                </div>                
+                <!--</div>-->
+                <%}%>
+                <!--Fourth Block (Only for Projects)-->
+                <% if(title == "Projects") {%>
+                <!-- <div class="row" id="unit4"> -->
+                <div class="col-12 px-0 w-100"></div>
+
+                <div class="col-12 px-0" id="unit4">
+                        <div class="container">
+                                <%- include partials/projects_3.ejs %>
+                        </div>                        
+                </div>
+                <%}%>
+        </div> 
+  </main>
+
+
+      
+  <%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>
+

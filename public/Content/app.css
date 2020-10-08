@@ -1,0 +1,122 @@
+/*
+    File Name: app.css
+    Student Name: Anirudh Babu
+    Student ID: 301105250
+    Date: 9 October, 2020
+*/
+.navbar{
+    background-color: blueviolet;
+    max-height: 40px;
+}
+.navbar-brand img{
+    max-width: 30px;
+    max-height: 30px;
+}
+main{
+    padding-bottom: 40px;
+}
+#contactMain{
+    padding-bottom: 600px;
+}
+#unit1, #unit2, #unit3, #unit4{
+    color: white;    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#unit1{
+    background-color: blueviolet;   
+    background-image: url("/Assets/images/background-s1.png");
+}
+#unit2{
+    background-color: #FF25B0;
+    background-image: url("/Assets/images/background-s2.png");
+}
+#unit3{
+    background-color: #FF2C54;
+    background-image: url("/Assets/images/background-s3.png");
+}
+#unit4{
+    background-color: blueviolet;
+    background-image: url("/Assets/images/background-s4.png");
+}
+h6{
+    color: white;
+}
+.even, .odd{
+    width:50%;
+    height: 50%;
+}
+.even{    
+    float: right;
+}
+.odd{
+    float: left;
+}
+a, a:hover{
+    text-decoration: none;
+}
+a{    
+    color: brown;
+}
+a:hover{
+    color: gold;
+}
+.lead{
+    font-size: 1.5em;
+}
+embed{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#photoSlides{
+    max-width: 300px;
+    display: inline-block;
+}
+#besidePhoto{
+    padding-right: 340px;
+    padding-top: 50px;
+    float:right;
+}
+#missionStatement{
+    float: left;
+    padding-top: 40px;
+}
+#projectTitle{
+    padding-top: 60px;
+    padding-left: 100px;
+}
+.media img{
+    padding-top: 15px;
+}
+#SlotMachine{
+    padding-bottom: 15px;
+}
+.progress, .form-control{
+    width: 500px;
+}
+.services-list-item{
+    padding-top: 20px;
+    padding-right: 300px;
+    float: right;
+}
+.card{
+    width: 500px;
+    float: right;
+    background-color: #AC4DF5;
+    color: white;
+}
+.besideInfo{
+    float: left;
+}
+#servicesSubTitle{    
+    padding-top: 10px;
+    padding-right: 500px;
+    float: right;
+}
+#services-list{
+    list-style: none;
+    padding-bottom: 20px;
+}
+#submitButton{
+    background-color: blueviolet;
+}
