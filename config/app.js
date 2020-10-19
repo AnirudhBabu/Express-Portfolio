@@ -11,6 +11,23 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+//modules for authentication 
+let session = require('express-session');
+let passport = require('passport');
+
+//authentication strategy
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy; //alias for local strategy
+
+//authentication message display
+let flash = require('connect-flash');
+
+//connect to user model
+let user = require('../models/user');
+
+//connect to contact model
+let contact = require('../models/contact');
+
 let indexRouter = require('../routes/index');
 
 let app = express();
