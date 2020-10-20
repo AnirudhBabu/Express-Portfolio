@@ -7,9 +7,7 @@ let indexController = require('../controllers/index');
 router.get('/', indexController.displayHomePage);
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home'});
-}); 
+router.get('/home', indexController.displayHomePage); 
 
 /* GET About page. */
 router.get('/about', indexController.displayAboutPage);

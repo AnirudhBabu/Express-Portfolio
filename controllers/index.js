@@ -8,19 +8,39 @@ let User = userModel.Model;
 
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', { title: 'Home'});
+    res.render('index', 
+    {
+        title: 'Home',
+        displayName: req.user ? req.user.displayName: ''
+    });
 };
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('index', { title: 'About Me'});
+    res.render('index', 
+    {
+        title: 'About Me',
+        displayName: req.user ? req.user.displayName: ''
+    });
 };
 module.exports.displayProjectsPage = (req, res, next) => {
-    res.render('index', { title: 'Projects'});
+    res.render('index', 
+    {
+        title: 'Projects',
+        displayName: req.user ? req.user.displayName: ''
+    });
 };
 module.exports.displayServicesPage = (req, res, next) => {
-    res.render('index', { title: 'Services'});
+    res.render('index', 
+    {
+        title: 'Services',
+        displayName: req.user ? req.user.displayName: ''
+    });
 };
 module.exports.displayContactPage = (req, res, next) => {
-    res.render('contact', { title: 'Contact'});
+    res.render('contact', 
+    {
+        title: 'Contact',
+        displayName: req.user ? req.user.displayName: ''
+    });
 };
 module.exports.displayLoginPage = (req, res, next) => {
     //check if user is already logged in
@@ -72,7 +92,11 @@ module.exports.processLoginPage = (req, res, next) => {
     })(req, res, next);
 };
 module.exports.displayContactList = (req, res, next) => {
-    res.render('contact', { title: 'Contact List'});
+    res.render('contact', 
+    {
+        title: 'Contact List',
+        displayName: req.user ? req.user.displayName: ''
+    });
 };
 
 module.exports.PerformLogout = (req, res, next) => {

@@ -93,10 +93,10 @@ passport.deserializeUser(User.deserializeUser());
 
 
 /* User.register(new User({
-    username: 'admin',
-    email: 'admin@company.com',
-    displayName: 'Admin'
-  }), 'admin'); */
+    username: 'jamesHill702',
+    email: 'jHill@hills.com',
+    displayName: 'James'
+  }), 'james702');  */
 
 app.use('/', indexRouter);
 

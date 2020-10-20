@@ -65,7 +65,7 @@
     }
     window.addEventListener("load", setDivHeight);
 
-    document.getElementById("submitButton") ? document.getElementById("submitButton").addEventListener("submit", (event)=>{
+    document.getElementById("submitButton") ? document.getElementById("submitContact").addEventListener("submit", (event)=>{
         event.preventDefault();
         userData = DataCapture();
         window.location.href = "\\";
