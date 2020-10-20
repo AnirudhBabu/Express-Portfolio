@@ -3,6 +3,17 @@ let router = express.Router();
 
 let indexController = require('../controllers/index');
 
+// helper function for guard purposes
+function requireAuth(req, res, next)
+{
+    //check if the user is logged in 
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
+
 /* GET home page. */
 router.get('/', indexController.displayHomePage);
 
@@ -31,6 +42,6 @@ router.post('/login', indexController.processLoginPage);
 router.get('/logout', indexController.PerformLogout);
 
 /* GET contact list page. */
-router.get('/contact-list', indexController.displayContactList);
+router.get('/contact-list', requireAuth, indexController.displayContactList);
 
 module.exports = router;
