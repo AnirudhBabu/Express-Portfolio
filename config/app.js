@@ -33,7 +33,7 @@ let indexRouter = require('../routes/index');
 let app = express();
 
 let mongoose = require('mongoose');
-let DB = require('./DB');
+let DB = require('./db');
 const { Strategy } = require('passport');
 
 mongoose.connect((DB.URI || DB.uri), {useNewUrlParser: true, useUnifiedTopology: true});
