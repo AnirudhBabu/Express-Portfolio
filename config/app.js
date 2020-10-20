@@ -36,7 +36,7 @@ let mongoose = require('mongoose');
 let DB = require('./db');
 const { Strategy } = require('passport');
 
-mongoose.connect((DB.URI || DB.uri), {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DB.uri, {useNewUrlParser: true, useUnifiedTopology: true});
 let dbConnection = mongoose.connection; // alias
 
 dbConnection.on('error', console.error.bind(console, 'connection error:'));
