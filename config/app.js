@@ -91,6 +91,13 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
+/* User.register(new User({
+    username: 'admin',
+    email: 'admin@company.com',
+    displayName: 'Admin'
+  }), 'admin'); */
+
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

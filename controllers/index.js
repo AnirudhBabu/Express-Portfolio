@@ -50,7 +50,7 @@ module.exports.processLoginPage = (req, res, next) => {
         }
 
         //login error
-        if(!user || req.body.password != User.findOne({username: req.body.username}).password)
+        if(!user)
         {
             req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
