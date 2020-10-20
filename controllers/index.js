@@ -91,13 +91,7 @@ module.exports.processLoginPage = (req, res, next) => {
         }
     })(req, res, next);
 };
-module.exports.displayContactList = (req, res, next) => {
-    res.render('contact', 
-    {
-        title: 'Contact List',
-        displayName: req.user ? req.user.displayName: ''
-    });
-};
+
 
 module.exports.PerformLogout = (req, res, next) => {
   req.logout();

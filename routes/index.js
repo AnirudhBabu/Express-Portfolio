@@ -3,6 +3,8 @@ let router = express.Router();
 
 let indexController = require('../controllers/index');
 
+let contactController = require('../controllers/contact');
+
 // helper function for guard purposes
 function requireAuth(req, res, next)
 {
@@ -42,6 +44,12 @@ router.post('/login', indexController.processLoginPage);
 router.get('/logout', indexController.PerformLogout);
 
 /* GET contact list page. */
-router.get('/contact-list', requireAuth, indexController.displayContactList);
+router.get('/contact-list', requireAuth, contactController.displayContactList);
+
+/* GET request for edit contact page */
+router.get('/contact-list/edit/:id', requireAuth, contactController.displayEditPage);
+
+/* POST request for processing edit page */
+router.post('/contact-list/edit/:id', requireAuth, contactController.processEditPage);
 
 module.exports = router;

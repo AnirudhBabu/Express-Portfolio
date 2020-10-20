@@ -81,8 +81,9 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-//configure our user model
+//configure our models
 let User = user.Model;
+let Contact = contact.Model;
 
 //implement a user authentication strategy
 passport.use(User.createStrategy());
@@ -97,6 +98,44 @@ passport.deserializeUser(User.deserializeUser());
     email: 'jHill@hills.com',
     displayName: 'James'
   }), 'james702');  */
+
+/* Contact.create(
+    {
+      contactName: "Katy Peter",
+      contactNumber: "4165789999",
+      email: "katy@hotmail.com"
+    },
+    {
+      contactName: "Aswin Prasad",
+      contactNumber: "+918070654389",
+      email: "aswinsp@gmail.com"
+    },
+    {
+      contactName: "Muhammed Khan",
+      contactNumber: "6474329999",
+      email: "khan@yahoo.com"
+    },
+    {
+      contactName: "Sara Palmer",
+      contactNumber: "6475091234",
+      email: "saraPlm@gmail.com"
+    },
+    {
+      contactName: "Thomas Hunter",
+      contactNumber: "4163528765",
+      email: "jHunter@outlook.com"
+    },
+    {
+      contactName: "Joseph Stanlee",
+      contactNumber: "6476667777",
+      email: "stanlee456@yahoo.com"
+    },
+    {
+      contactName: "Ganga Yash",
+      contactNumber: "6475879002",
+      email: "gng658@gmail.com"
+    }
+  ); */
 
 app.use('/', indexRouter);
 
