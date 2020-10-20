@@ -74,3 +74,8 @@ module.exports.processLoginPage = (req, res, next) => {
 module.exports.displayContactList = (req, res, next) => {
     res.render('contact', { title: 'Contact List'});
 };
+
+module.exports.PerformLogout = (req, res, next) => {
+  req.logout();
+  res.redirect('/');
+};

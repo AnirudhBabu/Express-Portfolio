@@ -29,6 +29,10 @@ router.get('/login', indexController.displayLoginPage);
 /* POST request for login page*/
 router.post('/login', indexController.processLoginPage);
 
+/* Perform logout */
+router.get('/logout', indexController.PerformLogout);
+
 /* GET contact list page. */
 router.get('/contact-list', indexController.displayContactList);
+
 module.exports = router;
