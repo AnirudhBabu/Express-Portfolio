@@ -18,7 +18,17 @@ router.get('/about', indexController.displayAboutPage);
 router.get('/projects', indexController.displayProjectsPage); 
 
 /* GET Services page. */
-router.get('/services', indexController.displayServicesPage); 
+router.get('/services', indexController.displayServicesPage);
+
 /* GET Contact Us page. */
 router.get('/contact', indexController.displayContactPage);
+
+/* GET Contact Us page. */
+router.get('/login', indexController.displayLoginPage);
+
+/* POST request for login page*/
+router.post('/login', indexController.processLoginPage);
+
+/* GET contact list page. */
+router.get('/contact-list', indexController.displayContactList);
 module.exports = router;

@@ -32,6 +32,30 @@ let indexRouter = require('../routes/index');
 
 let app = express();
 
+let mongoose = require('mongoose');
+let DB = require('./DB');
+const { Strategy } = require('passport');
+
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+let dbConnection = mongoose.connection; // alias
+
+dbConnection.on('error', console.error.bind(console, 'connection error:'));
+dbConnection.once('open', ()=>{
+  console.log('MongoDB Connection OPEN');
+});
+
+dbConnection.once('connected', ()=>{
+  console.log('MongoDB Connected');
+});
+
+dbConnection.on('disconnected', ()=>{
+  console.log('MongoDB Disconnected');
+});
+
+dbConnection.on('reconnected', ()=>{
+  console.log('MongoDB Reconnected');
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
@@ -42,6 +66,30 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
+
+//set up express session
+app.use(session({
+  secret: DB.Secret,
+  saveUnintialized: false,
+  resave: false
+}));
+
+//initialize flash
+app.use(flash());
+
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+//configure our user model
+let User = user.Model;
+
+//implement a user authentication strategy
+passport.use(User.createStrategy());
+
+//serialization and deserialization
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 

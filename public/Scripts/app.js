@@ -65,12 +65,11 @@
     }
     window.addEventListener("load", setDivHeight);
 
-    //Listening for submit events regardless of page (Only contact page capable, hence)
-    document.addEventListener("submit", (event)=>{
+    document.getElementById("submitButton") ? document.getElementById("submitButton").addEventListener("submit", (event)=>{
         event.preventDefault();
         userData = DataCapture();
         window.location.href = "\\";
         console.log(userData);
-    });
+    }) : null ;
     
 })();   
