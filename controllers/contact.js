@@ -105,19 +105,6 @@ module.exports.processUpdatePage = (req, res, next)=> {
     });
 };
 
-module.exports.ProcessDeletePage = (req, res, next)=> {
-    let id = req.params.id;
-
-    Contact.Model.remove({_id: id}, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        res.redirect('/contact-list');
-    });
-};
-
 module.exports.processDeletePage = (req, res, next)=> {
     let id = req.params.id;
 
