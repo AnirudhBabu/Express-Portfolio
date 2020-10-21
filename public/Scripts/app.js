@@ -2,7 +2,7 @@
     File Name: app.js (In public/Scripts)
     Student Name: Anirudh Babu
     Student ID: 301105250
-    Date: 9 October, 2020
+    Date: 20 October, 2020
 */
 //IIFE - Immediately Invoked Function Expression
 (function(){
@@ -65,11 +65,15 @@
     }
     window.addEventListener("load", setDivHeight);
 
-    document.getElementById("submitButton") ? document.getElementById("submitContact").addEventListener("submit", (event)=>{
-        event.preventDefault();
-        userData = DataCapture();
-        window.location.href = "\\";
-        console.log(userData);
-    }) : null ;
+    // hooks up the submit button for the Contact page and calls DataCapture
+    if(document.title == "Contact")
+    {
+        document.getElementById("submitContact").addEventListener("submit", (event) => {
+            event.preventDefault();
+            userData = DataCapture();
+            window.location.href = "\\";
+            console.log(userData);
+        });
+    }   
     
 })();   

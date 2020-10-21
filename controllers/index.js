@@ -1,3 +1,9 @@
+/*
+    File Name: index.js (in controllers)
+    Student Name: Anirudh Babu
+    Student ID: 301105250
+    Date: 20 October, 2020
+*/
 let express = require('express');
 let router = express.Router();
 let passport = require('passport');
@@ -6,7 +12,7 @@ let passport = require('passport');
 let userModel = require('../models/user');
 let User = userModel.Model;
 
-
+//Page display and processing logic
 module.exports.displayHomePage = (req, res, next) => {
     res.render('index', 
     {

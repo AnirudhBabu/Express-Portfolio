@@ -2,7 +2,7 @@
     File Name: app.css
     Student Name: Anirudh Babu
     Student ID: 301105250
-    Date: 9 October, 2020
+    Date: 20 October, 2020
 */
 .navbar{
     background-color: blueviolet;
@@ -119,4 +119,8 @@ embed{
 }
 .purple{
     background-color: blueviolet;
+}
+.table{
+    margin-left: auto;
+    margin-right: auto;
 }

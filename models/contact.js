@@ -1,3 +1,9 @@
+/*
+    File Name: contact.js (in models)
+    Student Name: Anirudh Babu
+    Student ID: 301105250
+    Date: 20 October, 2020
+*/
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema; // alias
 let Model = mongoose.model; // alias

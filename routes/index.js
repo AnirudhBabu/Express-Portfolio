@@ -1,3 +1,9 @@
+/*
+    File Name: index.js (in routes)
+    Student Name: Anirudh Babu
+    Student ID: 301105250
+    Date: 20 October, 2020
+*/
 let express = require('express');
 let router = express.Router();
 
@@ -5,7 +11,7 @@ let indexController = require('../controllers/index');
 
 let contactController = require('../controllers/contact');
 
-// helper function for guard purposes
+// route guard
 function requireAuth(req, res, next)
 {
     //check if the user is logged in 
@@ -47,9 +53,12 @@ router.get('/logout', indexController.PerformLogout);
 router.get('/contact-list', requireAuth, contactController.displayContactList);
 
 /* GET request for edit contact page */
-router.get('/contact-list/edit/:id', requireAuth, contactController.displayEditPage);
+router.get('/contact-list/update/:id', requireAuth, contactController.displayUpdatePage);
 
 /* POST request for processing edit page */
-router.post('/contact-list/edit/:id', requireAuth, contactController.processEditPage);
+router.post('/contact-list/update/:id/', requireAuth, contactController.processUpdatePage);
+
+/* GET request for edit contact page */
+router.get('/contact-list/delete/:id', requireAuth, contactController.processDeletePage);
 
 module.exports = router;

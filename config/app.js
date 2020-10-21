@@ -135,8 +135,8 @@ passport.deserializeUser(User.deserializeUser());
       contactNumber: "6475879002",
       email: "gng658@gmail.com"
     }
-  ); */
-
+  );*/
+  
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

@@ -1,11 +1,12 @@
 <%- include('../partials/header.ejs') -%>
     <%- include('../partials/main_nav.ejs')-%>
     <main class="container">        
-        
-        <div class="row">     
+        <h1 class="display-4 text-center">Update Contact</h1>   
+        <hr><br>
+        <div class="row">              
             <div class="offset-md-3 col-md-4">
-                <h1 class="display-4">Edit Contact</h1>
-                <hr><br>
+                
+                
                 <form method="POST">
                     <div class="form-group">
                     <label for="contactName">Name</label>
@@ -28,8 +29,10 @@
                         required>
                     </div>
                     
-                    <button type="submit" class="btn btn-dark btn-lg purple"><i class="fas fa-edit"></i> Edit Contact</button>
-                    <a href="/contact-list" class="btn btn-warning btn-lg"><i class="fas fa-undo"></i> Cancel</a>
+                    <button type="submit" class="btn btn-dark btn-md purple"><i class="fas fa-edit"></i> Update Contact</button>
+                    <a href="/contact-list/delete/<%= id %>" id="deleteUpdateButton" class="btn btn-danger btn-md">
+                        <i class="fas fa-trash-alt"></i> Delete</a>
+                    <a href="/contact-list" class="btn btn-warning btn-md"><i class="fas fa-trash-restore-alt"></i>  Cancel</a>
                 </form>
 
             </div>
