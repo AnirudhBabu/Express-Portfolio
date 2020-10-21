@@ -24,40 +24,9 @@ module.exports.displayContactList = (req, res, next) => {
         res.render('secure/contact-list', 
         {
             title: 'Contact List',
-            contacts: data.sort((a, b) => {   //collection sorting based on contactName
-                if(a.contactName == b.contactName) //if names are the same
-                {
-                    return 0; //0 indicates an equal position
-                }
-                else
-                {
-                    //determining the short name and the long name among the given documents
-                    let contactName_short = a.contactName.length <= b.contactName.length ? a.contactName : b.contactName,
-                    contactName_long = a.contactName.length <= b.contactName.length ? b.contactName: a.contactName;
-
-                    // looping through each character of each contactName to find the one to be placed before and after
-                    for (let index = 0; index < contactName_short.length; index++) {
-                        //if characters are equal, comparison moves to the next character
-                        if(contactName_short[index] == contactName_long[index])
-                        {
-                            //if short string ends and still the chars are equal, the short string is placed before the longer string
-                            if(index == contactName_short.length - 1)
-                            {
-                                return contactName_short == a.contactName ? -1 : 1; //negative values indicate the first parameter to be lesser (placed before the other)
-                            }
-                            continue;
-                        }
-                        if(contactName_short == a.contactName)
-                        {
-                            return contactName_short[index] < contactName_long[index] ? -1 : 1; //negative values indicate the first parameter to be lesser (placed before the other)  
-                        }
-                        else
-                        {
-                            return contactName_short[index] < contactName_long[index] ? 1 : -1; //positive values indicate the second parameter to be lesser (placed before the other)  
-                        }                        
-                    }   
-                }
-                   
+            contacts: data.sort((a, b) => {   
+                let sortedNames = [a.contactName, b.contactName].sort();
+                return sortedNames[0] == a.contactName ? -1 : 1;
             }),
             displayName: req.user ? req.user.displayName: ''
         });
